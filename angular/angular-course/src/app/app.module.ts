@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TitleCasePipe } from './title-case.pipe';
 import { LikeComponent } from './like/like.component';
 import { ZippyComponent } from './zippy/zippy.component';
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ZippyComponent } from './zippy/zippy.component';
     FavoriteComponent,
     TitleCasePipe,
     LikeComponent,
-    ZippyComponent
+    ZippyComponent,
+    NewCourseFormComponent
   ],
   imports: [
     BrowserModule,
