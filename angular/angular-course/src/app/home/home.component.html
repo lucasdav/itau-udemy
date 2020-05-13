@@ -1,0 +1,43 @@
+<h1>Angular</h1>
+
+<h2>Abaixo o exercício: Assignment 1: List of Authors</h2>
+<ngfor-directive-authors></ngfor-directive-authors>
+
+<h2>Abaixo o exercício: Assignment 2: Favorite Component
+  componente botão favorito glyphicon-star</h2>
+<favorite-button></favorite-button>
+
+<h2>Abaixo o exercício: Assignment 3: Title Casing</h2>
+<input type="text" [(ngModel)]="title">
+<br>
+{{ title | titleCase }}
+
+<h2>Abaixo o exercício: Assignment 4: Like Component</h2>
+<like-component
+  [isActive]="tweet.isLiked"
+  [likesCount]="tweet.likesCount">
+</like-component>
+
+<h2>Abaixo o exercício: Assignment 5: Exercise: ZippyComponent</h2>
+<zippy-component title="Shipping Details">
+  Shipping Details Content
+</zippy-component>
+
+<h2>Abaixo o exercício: Assignment 6: Exercise: Course Form</h2>
+<new-course-form></new-course-form>
+
+<h2>Abaixo o exercício: Assignment 7: Change Password Form</h2>
+<change-password-component></change-password-component>
+
+<h2>Abaixo o exercício: Assignment 8: GitHub Follwers Page</h2>
+<github-followers></github-followers>
+
+<h2>Abaixo o exercício: Assignment 9: Blog Archives</h2>
+<h3> Home Page </h3>
+<ul>
+  <li *ngFor="let archive of archives">
+    <a
+      [routerLink]="['/archive', archive.year, archive.month]">
+      {{ archive.year + '/' + archive.month }}</a>
+  </li>
+</ul>

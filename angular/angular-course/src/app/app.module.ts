@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
@@ -11,6 +12,13 @@ import { TitleCasePipe } from './title-case.pipe';
 import { LikeComponent } from './like/like.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { GithubFollowersComponent } from './github-followers/github-followers.component';
+import { HttpClientModule } from '@angular/common/http';
+import { GithubFollowersService } from './github-followers.service';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 @NgModule({
   declarations: [
@@ -20,15 +28,28 @@ import { NewCourseFormComponent } from './new-course-form/new-course-form.compon
     TitleCasePipe,
     LikeComponent,
     ZippyComponent,
-    NewCourseFormComponent
+    NewCourseFormComponent,
+    ChangePasswordComponent,
+    GithubFollowersComponent,
+    HomeComponent,
+    NotFoundComponent,
+    ArchiveComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent },
+      { path: 'archive/:year/:month', component: ArchiveComponent },
+      { path: '**', component: NotFoundComponent }
+    ])
   ],
   providers: [
-    AuthorsService
+    AuthorsService,
+    GithubFollowersService
   ],
   bootstrap: [AppComponent]
 })
