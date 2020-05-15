@@ -19,6 +19,7 @@ import { GithubFollowersService } from './github-followers.service';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ArchiveComponent } from './archive/archive.component';
+import { SliderComponent } from './animations/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ArchiveComponent } from './archive/archive.component';
     GithubFollowersComponent,
     HomeComponent,
     NotFoundComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
